@@ -7,6 +7,7 @@ import cloudinary from "cloudinary";
 import Stripe from "stripe";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
+//import swaggerUi from "swagger-ui-express";
 
 //importing user routes
 import userRoutes from "./routes/userRoutes.js";
@@ -15,6 +16,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import connectDB from "./config/db.js";
+//import swaggerDocument from "../swagger-ouput.json";
 
 //dotenv configuration
 dotenv.config({ path: "./.env" });
@@ -49,6 +51,7 @@ app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/order", orderRoutes);
 app.use("/api/v1/cart", cartRoutes);
+//app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //port
 const PORT = process.env.PORT || 8080;
